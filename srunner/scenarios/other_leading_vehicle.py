@@ -53,7 +53,7 @@ class OtherLeadingVehicle(BasicScenario):
         self._first_vehicle_location = 35
         self._second_vehicle_location = self._first_vehicle_location + 1
         self._ego_vehicle_drive_distance = self._first_vehicle_location * 4
-        self._first_vehicle_speed = 55
+        self._first_vehicle_speed = 80
         self._second_vehicle_speed = 30
         self._reference_waypoint = self._map.get_waypoint(config.trigger_points[0].location)
         self._other_actor_max_brake = 1.0
@@ -113,7 +113,7 @@ class OtherLeadingVehicle(BasicScenario):
         keep_velocity.add_child(InTriggerDistanceToVehicle(self.other_actors[0], self.ego_vehicles[0], 55))
 
         # Decelerating actor sequence behavior
-        decelerate = self._first_vehicle_speed / 3.2
+        decelerate = self._first_vehicle_speed / 2
         leading_actor_sequence_behavior.add_child(keep_velocity)
         leading_actor_sequence_behavior.add_child(WaypointFollower(self.other_actors[0], decelerate,
                                                                    avoid_collision=True))
