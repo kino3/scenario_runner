@@ -209,7 +209,10 @@ class ScenarioRunner(object):
         filename = None
         if args.file:
             filename = config_name + current_time + ".txt"
-
+        print("analyze scenario")
+        print(args.output)
+        print(filename)
+        print(junit_filename)
         if not self.manager.analyze_scenario(args.output, filename, junit_filename):
             print("Success!")
         else:

@@ -121,7 +121,7 @@
                                         <Speed>
                                             <Dynamics shape="step" rate="0" distance="100" />
                                             <Target>
-                                                <Absolute value="15.0" />
+                                                <Absolute value="6.0" />
                                             </Target>
                                         </Speed>
                                     </Longitudinal>
@@ -135,7 +135,7 @@
                                                 <Entity name="hero" />
                                             </TriggeringEntities>
                                             <EntityCondition>
-                                                <RelativeDistance entity="adversary" type="inertial" value="40.0" freespace="false" rule="less_than" />
+                                                <RelativeDistance entity="adversary" type="inertial" value="20.0" freespace="false" rule="less_than" />
                                             </EntityCondition>
                                         </ByEntity>
                                     </Condition>
@@ -216,7 +216,7 @@
         </Story>
         <EndConditions>
             <ConditionGroup>
-                <Condition name="RunningStopTest" delay="0" edge="rising">
+		    <!--<Condition name="RunningStopTest" delay="0" edge="rising">
                     <ByValue>
                         <Parameter name="" value="" rule="less_than" />
                     </ByValue>
@@ -245,10 +245,10 @@
                     <ByValue>
                         <Parameter name="" value="" rule="less_than" />
                     </ByValue>
-                </Condition>
+		</Condition>-->
                 <Condition name="DrivenDistanceTest" delay="0" edge="rising">
                     <ByValue>
-                        <Parameter name="distance_success" value="100" rule="less_than" />
+                        <Parameter name="distance_success" value="1000" rule="greater_than" />
                     </ByValue>
                 </Condition>
             </ConditionGroup>
